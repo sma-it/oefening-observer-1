@@ -26,6 +26,9 @@ namespace Oefening1
         int potionsQuaffed = 0;
         public int PotionsQuaffed { get => potionsQuaffed; }
 
+        int itemsDropped = 0;
+        public int ItemsDropped { get => itemsDropped; }
+
         private void updateCrops()
         {
             cropsPlanted++;
@@ -63,6 +66,15 @@ namespace Oefening1
             }
         }
 
+        private void updateItemsDropped()
+        {
+            itemsDropped++;
+            if (itemsDropped == 13)
+            {
+                Console.WriteLine("You're a loser (of items)");
+            }
+        }
+
         public void update(PlayerAction action)
         {
             switch(action)
@@ -71,6 +83,7 @@ namespace Oefening1
                 case PlayerAction.PUNCH_ENEMY: updatePunches(); break;
                 case PlayerAction.PLANT_CROP: updateCrops(); break;
                 case PlayerAction.KICK_ENEMY: updateKicks(); break;
+                case PlayerAction.DROP_ITEM: updateItemsDropped(); break;
             }
         }
     }

@@ -20,6 +20,8 @@ namespace Oefening1
             menu.AddOption('5', "Plant Carrot", () => player.Plant("Carrot"));
             menu.AddOption('6', "Plant Avocado", () => player.Plant("Avocado"));
             menu.AddOption('7', "Kick the Enemy", () => player.KickEnemy());
+            menu.AddOption('8', "Plant Salad", () => player.Plant("Salad"));
+            menu.AddOption('9', "Drop Rock", () => player.DropItem());
 
             menu.Start();
         }

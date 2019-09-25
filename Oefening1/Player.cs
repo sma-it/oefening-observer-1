@@ -36,6 +36,12 @@ namespace Oefening1
             UpdateObservers(PlayerAction.PICK_UP_ITEM);
         }
 
+        public void DropItem()
+        {
+            Console.WriteLine("Player Drops an Item");
+            UpdateObservers(PlayerAction.DROP_ITEM);
+        }
+
         public void PunchEnemy()
         {
             Console.WriteLine("Player Punches the Enemy");
