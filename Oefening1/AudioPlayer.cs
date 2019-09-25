@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Oefening1
 {
-    class AudioPlayer
+    class AudioPlayer: IObserver
     {
         private void PlayPunchSound()
         {
@@ -19,6 +19,16 @@ namespace Oefening1
         private void PlayDrinkingSound()
         {
             Console.WriteLine("  ^^QUAF^^");
+        }
+
+        public void update(PlayerAction action)
+        {
+            switch(action)
+            {
+                case PlayerAction.PUNCH_ENEMY: PlayPunchSound(); break;
+                case PlayerAction.PLANT_CROP: PlayRustleLeaves(); break;
+                case PlayerAction.DRINK_POTION: PlayDrinkingSound(); break;
+            }
         }
     }
 }

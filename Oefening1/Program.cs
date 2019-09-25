@@ -12,6 +12,10 @@ namespace Oefening1
             XPBar xpBar = new XPBar();
             Achievements achievements = new Achievements();
 
+            player.AddObserver(audioPlayer);
+            player.AddObserver(xpBar);
+            player.AddObserver(achievements);
+
             var menu = new SMUtils.Menu();
             menu.AddOption('1', "Punch the Enemy", () => player.PunchEnemy());
             menu.AddOption('2', "Pick up Rock", () => player.PickupItem());

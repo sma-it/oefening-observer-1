@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Oefening1
 {
-    class Achievements
+    class Achievements : IObserver
     {
         int cropsPlanted = 0;
         public int CropsPlanted { get => cropsPlanted; }
@@ -42,6 +42,14 @@ namespace Oefening1
             }
         }
 
-
+        public void update(PlayerAction action)
+        {
+            switch(action)
+            {
+                case PlayerAction.DRINK_POTION: updateDrinks(); break;
+                case PlayerAction.PUNCH_ENEMY: updatePunches(); break;
+                case PlayerAction.PLANT_CROP: updateCrops(); break;
+            }
+        }
     }
 }
