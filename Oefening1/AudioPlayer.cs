@@ -6,6 +6,14 @@ namespace Oefening1
 {
     class AudioPlayer: IObserver
     {
+        ISubject player;
+
+        public AudioPlayer(ISubject player)
+        {
+            this.player = player;
+            player.AddObserver(this);
+        }
+
         private void PlayPunchSound()
         {
             Console.WriteLine("  *** punch! ***");

@@ -6,6 +6,14 @@ namespace Oefening1
 {
     class Achievements : IObserver
     {
+        ISubject player;
+
+        public Achievements(ISubject player)
+        {
+            this.player = player;
+            player.AddObserver(this);
+        }
+
         int cropsPlanted = 0;
         public int CropsPlanted { get => cropsPlanted; }
 
@@ -29,6 +37,7 @@ namespace Oefening1
             enemiesPunched++;
             if(enemiesPunched == 20)
             {
+                // also known as the Donald Trump Achievement
                 Console.WriteLine("Low IQ Achievement (20 enemies hit instead of talking things out)");
             }
         }

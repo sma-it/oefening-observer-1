@@ -8,13 +8,9 @@ namespace Oefening1
         {
             var player = new Player();
 
-            AudioPlayer audioPlayer = new AudioPlayer();
-            XPBar xpBar = new XPBar();
-            Achievements achievements = new Achievements();
-
-            player.AddObserver(audioPlayer);
-            player.AddObserver(xpBar);
-            player.AddObserver(achievements);
+            AudioPlayer audioPlayer = new AudioPlayer(player);
+            XPBar xpBar = new XPBar(player);
+            Achievements achievements = new Achievements(player);
 
             var menu = new SMUtils.Menu();
             menu.AddOption('1', "Punch the Enemy", () => player.PunchEnemy());

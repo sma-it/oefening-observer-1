@@ -8,6 +8,14 @@ namespace Oefening1
     {
         public int currentXP { get; set; } = 0;
 
+        ISubject player;
+
+        public XPBar(ISubject player)
+        {
+            this.player = player;
+            player.AddObserver(this);
+        }
+
         public void update(PlayerAction action)
         {
             if (action == PlayerAction.PUNCH_ENEMY)
