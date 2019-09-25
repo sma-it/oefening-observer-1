@@ -12,6 +12,7 @@ namespace Oefening1
             XPBar xpBar = new XPBar(player);
             Achievements achievements = new Achievements(player);
             Bag bag = new Bag(player);
+            Enemy enemy = new Enemy(player);
 
             var menu = new SMUtils.Menu();
             menu.AddOption('1', "Punch the Enemy", () => player.PunchEnemy());

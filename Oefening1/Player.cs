@@ -27,7 +27,12 @@ namespace Oefening1
 
         public void UpdateObservers(PlayerAction action)
         {
-            observers.ForEach(observer => observer.update(action));
+            // does not work when the observer may remove itsself
+            // observers.ForEach(observer => observer.update(action));
+            for(int i = observers.Count - 1; i >= 0; i--)
+            {
+                observers[i].update(action);
+            }
         }
 
         public void PickupItem()
