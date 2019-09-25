@@ -42,6 +42,12 @@ namespace Oefening1
             UpdateObservers(PlayerAction.PUNCH_ENEMY);
         }
 
+        public void KickEnemy()
+        {
+            Console.WriteLine("Player Kicks the Enemy");
+            UpdateObservers(PlayerAction.KICK_ENEMY);
+        }
+
         public void DrinkHealthPotion()
         {
             Console.WriteLine("Player drinks a health potion");

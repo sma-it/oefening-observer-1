@@ -18,7 +18,7 @@ namespace Oefening1
 
         public void update(PlayerAction action)
         {
-            if (action == PlayerAction.PUNCH_ENEMY)
+            if (action == PlayerAction.PUNCH_ENEMY || action == PlayerAction.KICK_ENEMY)
             {
                 currentXP++;
                 DrawXPBar();

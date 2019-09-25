@@ -19,6 +19,11 @@ namespace Oefening1
             Console.WriteLine("  *** punch! ***");
         }
 
+        private void PlayKickSound()
+        {
+            Console.WriteLine("  *** Kick! ***");
+        }
+
         private void PlayRustleLeaves()
         {
             Console.WriteLine("  .. rustle ..");
@@ -34,6 +39,7 @@ namespace Oefening1
             switch(action)
             {
                 case PlayerAction.PUNCH_ENEMY: PlayPunchSound(); break;
+                case PlayerAction.KICK_ENEMY: PlayKickSound(); break;
                 case PlayerAction.PLANT_CROP: PlayRustleLeaves(); break;
                 case PlayerAction.DRINK_POTION: PlayDrinkingSound(); break;
             }

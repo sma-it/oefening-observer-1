@@ -20,6 +20,9 @@ namespace Oefening1
         int enemiesPunched = 0;
         public int EnemiesPunched { get => enemiesPunched; }
 
+        int enemiesKicked = 0;
+        public int EnemiesKicked { get => enemiesKicked; }
+
         int potionsQuaffed = 0;
         public int PotionsQuaffed { get => potionsQuaffed; }
 
@@ -42,6 +45,15 @@ namespace Oefening1
             }
         }
 
+        private void updateKicks()
+        {
+            enemiesKicked++;
+            if (enemiesKicked == 5)
+            {
+                Console.WriteLine("Lowest Achievement reached");
+            }
+        }
+
         private void updateDrinks()
         {
             potionsQuaffed++;
@@ -58,6 +70,7 @@ namespace Oefening1
                 case PlayerAction.DRINK_POTION: updateDrinks(); break;
                 case PlayerAction.PUNCH_ENEMY: updatePunches(); break;
                 case PlayerAction.PLANT_CROP: updateCrops(); break;
+                case PlayerAction.KICK_ENEMY: updateKicks(); break;
             }
         }
     }
