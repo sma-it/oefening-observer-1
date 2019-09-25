@@ -11,6 +11,9 @@ Boven het menu zie je dat er ook andere objecten gedeclareerd zijn: AudioPlayer,
 - *XPBar* luistert enkel naar de actie  `PUNCH_ENEMY`. Bij elke punch verhoog je XP met 1. En toon je de XPBar op het scherm via de `DrawXPBar` functie.
 - *Achievements* luistert naar `PUNCH_ENEMY`, `DRINK_POTION` en `PLANT_CROP`. Je update de bijbehorende functie. Die houdt zelf bij hoeveel keer een actie uitgevoerd werd en toont een achievement wanneer nodig.
 
+### opdracht 1b
+Waarschijnlijk heb je nu de `AddObserver` functie van player uitgevoerd om alle observers toe te voegen. Maar het kan nog eenvoudiger: als je het subject gebruikt als parameter in de constructor van elke observer, dan kan die zichzelf toevoegen (en kan je het ook niet vergeten). Pas je code aan zodat het op deze manier werkt. (Er staat ook een voorbeeld in de cursus.)
+
 ### opdracht 2
 - Voeg een player Actie toe met de naam `KICK_ENEMY`. Zorg ook voor een extra menu optie, een achievement, xp update en geluid.
 - Voeg een optie toe om sla te planten.
